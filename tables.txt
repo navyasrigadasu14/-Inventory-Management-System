@@ -1,0 +1,13 @@
+create table staff(
+staffno varchar(20),
+stname varchar(20),
+phno varchar(10),
+email varchar(30),
+dob varchar(15),
+gender varchar(10),
+img varchar(20),
+jdate varchar(15),
+dname varchar(20),
+pwd varchar(20),
+status varchar(20)
+);
