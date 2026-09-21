@@ -20,8 +20,8 @@ try {
 
     if ("Admin".equals(t1)) {
 
-        // Change these to your actual Admin credentials
         if ("Admin".equals(t2) && "Admin".equals(t3)) {
+            session.setAttribute("name", t2);
             response.sendRedirect("AdminPage.jsp");
             return;
         } else {
@@ -40,6 +40,9 @@ try {
         rs = ps.executeQuery();
 
         if (rs.next()) {
+            String name = rs.getString("name");
+            session.setAttribute("name", name);
+
             response.sendRedirect("StaffPage.jsp");
             return;
         } else {
@@ -52,6 +55,7 @@ try {
 
 } catch(Exception e) {
     out.println("<h3>Error: " + e.getMessage() + "</h3>");
+
 } finally {
     try {
         if (rs != null) rs.close();
